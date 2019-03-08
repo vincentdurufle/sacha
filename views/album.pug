@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .photo-container2
+        .description 
+            span.title #{album.title}
+            p #{album.descriptionFR}
+            p #{album.descriptionENG}
+        .photo-container-half
+            .slider_container
+                each photo, index in album.slider
+                    img(src=`/uploads/${photo}` alt="" data-position=`${index+1}`).index
+                span.counter
+        

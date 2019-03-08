@@ -1,0 +1,10 @@
+extends layout
+
+include mixins/albumCard
+
+block content
+    .album_container
+        each album in albums
+            +albumCard(album)
+
+            

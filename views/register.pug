@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .album_container
+        form(action="/register" method='post').login
+            h2 Register
+            label(for="username")  Email address
+            input(type="text" name="username")
+            label(for="password") Password
+            input(type="password", name="password")
+            input(type='submit' value='Register →').button

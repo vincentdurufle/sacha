@@ -1,0 +1,6 @@
+mixin albumCard(album = {})
+    .portfolio2
+        a(href=`/album/${album.slug}`)
+            img(src=`/uploads/${album.photoCover || 'PhotoBio.jpg'}` alt=album.title).thumbnails2
+        p.album_title= album.title
+

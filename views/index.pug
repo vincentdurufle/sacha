@@ -1,0 +1,59 @@
+doctype html
+html
+    head
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-132582219-1')
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+        dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-132582219-1');
+    meta(charset='UTF-8')
+    meta(name='keywords' content='photographie, sacha lebas, paris, argentique, art')
+    meta(name='description' content='SACHA LEBAS PHOTOGRAPHIE · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
+    meta(name='author' content='Sacha Lebas')
+    meta(property='og:title' content='Sacha Lebas DIARY')
+    meta(property='og:site_name' content='Sacha Lebas')
+    meta(property='og:url' content='http://sachalebas.com')
+    meta(property='og:description' content='SACHA LEBAS PORTFOLIO · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
+    meta(property='og:type' content='website')
+    meta(property='og:image' content='http://sachalebas.com/ressources/img/bio.jpg')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    link(rel='stylesheet' href='/ressources/css/style.css')
+    link(rel='stylesheet' href='/ressources/css/queries.css')
+    link(rel='stylesheet' href='/ressources/css/stylesheet.css')
+    title SACHA LEBAS DIARY
+    body.indexPage
+        div.main
+            header
+                nav
+                    ul.banner-container
+                        li
+                            a(href='/index')
+                                h1 Sacha Lebas
+                        li.line
+                            a(href='/new_portfolio')  Photo
+                        li.line
+                            a(href='https://www.instagram.com/sacha_lebas/' target='_blank')  Instagram
+                        li.line
+                            a(href='/about')  About
+                        li.line
+                            a(href='/contact')  Contact
+            section.photo-container
+                .photo
+                    img.is_selected.index(data-position='1' src='ressources/img/LePetitGregory.jpg' alt='Spireat band groupe rock')
+                    img.index(data-position='2' src='ressources/img/Collioure.jpg' alt='Vacances, Sud, France')
+                    img.index(data-position='3' src='ressources/img/Vinyle.jpg' alt='Vinyle, Vintage, Jaune')
+                    img.index(data-position='4' src='ressources/img/New-York.jpg' alt='Île, USA, NY, Ville')
+                    img.index(data-position='5' src='ressources/img/Studio_5.jpg' alt='Guitare, Noir et Blanc, paris')
+                    img.index(data-position='6' src='ressources/img/SpireatN&B.jpg' alt='Spireat, Paris, Rock, Groupe')
+                    img.index(data-position='7' src='ressources/img/AlexRouge.jpg' alt='Spireat, Rouge, monochrome')
+                    img.index(data-position='8' src='ressources/img/VincentRouge.jpg' alt='Spireat band groupe rock')
+                span.counter
+            footer
+                p ALL CONTENTS &copy; 2019 SACHA LEBAS
+script(src='/vendors/js/jquery-3.3.1.min.js')
+script(type='text/javascript' src='http://www.cornify.com/js/cornify.js')
+script(src='/ressources/js/script.js')

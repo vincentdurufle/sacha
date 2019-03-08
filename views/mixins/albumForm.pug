@@ -1,0 +1,24 @@
+mixin albumForm(album = {})
+    form(method='post', action=`/users/add/${album._id || ''}` enctype='multipart/form-data').login
+        label(for='title') Title
+        input(type='text', name='title', placeholder='Enter a title', required='' value=album.title)
+        br
+        label(for="descriptionFR") Description FR
+        textarea(name="descriptionFR")= album.descriptionFR
+        br
+        label(for="descriptionENG") Description ENG
+        textarea(name="descriptionENG")= album.descriptionENG
+        
+        //- img upload
+        label(for="photoCover") Album Cover   
+            input(type="file", name="photoCover" accept='image/gif, image/png, image/jpeg')
+            if album.photoCover
+                img(src=`/uploads/${album.photoCover}`, alt=album.title width=200)
+        br
+        label(for="slider") Slider                
+            input(type="file", name="slider" accept='image/gif, image/png, image/jpeg' multiple)
+            if album.slider
+                each photo in album.slider
+                    img(src=`/uploads/${photo}`, alt=album.title width=200)                
+        br
+        input(type='submit', value='ADD Album →').button
