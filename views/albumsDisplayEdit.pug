@@ -1,0 +1,10 @@
+extends layout
+
+include mixins/albumCardEdit
+
+block content
+    .album_container
+        each album in albums
+            +albumCardEdit(album)
+
+            

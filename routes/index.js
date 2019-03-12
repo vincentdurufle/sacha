@@ -23,6 +23,8 @@ router.post('/users/add',
   siteControllers.createAlbum
 );
 
+router.get('/users/edit', siteControllers.editingAlbumPage);
+
 router.post('/users/add/:id',
   siteControllers.upload,
   siteControllers.resize, 
@@ -34,10 +36,6 @@ router.get('/album/:slug', siteControllers.getAlbumBySlug);
 router.get('/users', userController.loginForm);
 router.post('/users', userController.login);
 
-router.get('/register', userController.registerForm);
-router.post('/register', 
-  userController.register,
-  userController.login);
-
+router.get('/video', siteControllers.video);
 
 module.exports = router;

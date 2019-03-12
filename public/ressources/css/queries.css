@@ -24,15 +24,32 @@
     .about_container img { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; width: 100%; padding: 0;}
     .about_text {-webkit-box-ordinal-group: 3;-ms-flex-order: 2;order: 2;}
     .photo-container2 {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        height: 100vh;
+        flex-wrap: wrap;
+        margin-top: 10px;
     }
-    .photo-container-half { padding: 20px; width: 80%;}
-    .slider_container {
+    .photo-container-half { 
         
+        padding: 20px; 
+        max-width: 80%;
     }
-    .description { max-width: 80%;}
+
+    .portfolio2 {
+        max-width: 80%;
+    }
+    .description { 
+        max-width: 80%;
+    }
+
+    .video_container {
+        width: 80%;
+        padding: 20px 10%;
+    }
+    .photo {
+        width: 100%;
+        height: auto;
+    }
     
 }
 
@@ -71,7 +88,7 @@
     }
 
     .photo-container {
-        height: 65vh;
+        /* height: 65vh; */
     }
 
     .about_text {

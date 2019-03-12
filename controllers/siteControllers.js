@@ -3,11 +3,16 @@ const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
 const slug = require('slug');
-require('dotenv').config({ path: 'process.env'});
+const fs = require('fs');
+const uploadDir = ('./public/uploads');
+require('dotenv').config({
+    path: 'process.env'
+});
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true
+});
 
 
 const multerOptions = {
@@ -23,6 +28,7 @@ const multerOptions = {
         }
     }
 };
+
 
 //test schema
 
@@ -66,12 +72,20 @@ exports.contact = (req, res) => {
 exports.addAlbum = (req, res) => {
     res.render('editAlbum')
 };
+exports.video = (req, res) => {
+    res.render('video');
+}
+exports.editingAlbumPage = async (req, res) => {
+    const albums = await Album.find();
+    res.render('albumsDisplayEdit', {
+        albums
+    });
+}
 
 // router.post
 exports.createAlbum = async (req, res) => {
     const album = await (new Album(req.body)).save();
     res.redirect(`/album/${album.slug}`);
-
 }
 
 exports.updateAlbum = async (req, res) => {
@@ -81,10 +95,28 @@ exports.updateAlbum = async (req, res) => {
         new: true, // return the new store instead of the old one
         runValidators: true
     }).exec();
+    // const albumArray = await Album.aggregate([{
+    //     "$project": {
+    //         "_id": 0,
+    //         "slider": {
+    //             "$map": {
+    //                 "input": "$Album",
+    //                 "as": "ar",
+    //                 "in": "$$ar.slider"
+    //             }
+    //         }
+    //     }
+    // }])
+    // console.log(albumArray);
+    // await fs.readdir(uploadDir, (err, files) => {
+    //     for (file in files) {
+    //         console.log(file);
+    //     }
+    // })
+
     res.redirect(`/album/${album._id}/edit`);
 }
 
-// exports.upload = multer(multerOptions).single('photoCover');
 exports.upload = multer(multerOptions).fields([{
     name: 'photoCover'
 }, {
@@ -98,29 +130,31 @@ exports.resize = async (req, res, next) => {
     }
 
     // for photoCover
+    for (i in req.files['photoCover']) {
+        const extension = req.files['photoCover'][i].mimetype.split('/')[1];
+        req.body.photoCover = `${uuid.v4()}.${extension}`;
 
-    const extension = req.files['photoCover'][0].mimetype.split('/')[1];
-    req.body.photoCover = `${uuid.v4()}.${extension}`;
+        const photoCover = await jimp.read(req.files['photoCover'][0].buffer);
+        await photoCover.resize(800, jimp.AUTO);
+        await photoCover.write(`./public/uploads/${req.body.photoCover}`);
+    }
 
-    const photoCover = await jimp.read(req.files['photoCover'][0].buffer);
-    await photoCover.resize(800, jimp.AUTO);
-    await photoCover.write(`./public/uploads/${req.body.photoCover}`);
-    
-        //for slider
 
-        req.body.slider = [];
-        for ( i in req.files['slider']) {
-            let extensions = req.files['slider'][i].mimetype.split('/')[1];
-            let extensionPath = `${uuid.v4()}.${extensions}`;
-            req.body.slider.push(extensionPath);
-    
-            //resize
-            
-            let slider = await jimp.read(req.files['slider'][i].buffer);
-            await slider.resize(800, jimp.AUTO);
-            await slider.write(`./public/uploads/${extensionPath}`); 
-            
-        }
+    //for slider
+
+    req.body.slider = [];
+    for (i in req.files['slider']) {
+        let extensions = req.files['slider'][i].mimetype.split('/')[1];
+        let extensionPath = `${uuid.v4()}.${extensions}`;
+        req.body.slider.push(extensionPath);
+
+        //resize
+
+        let slider = await jimp.read(req.files['slider'][i].buffer);
+        await slider.resize(800, jimp.AUTO);
+        await slider.write(`./public/uploads/${extensionPath}`);
+
+    }
 
     next();
 
@@ -135,10 +169,14 @@ exports.getAlbums = async (req, res) => {
 }
 
 exports.getAlbumBySlug = async (req, res, next) => {
-    const album = await Album.findOne({ slug: req.params.slug });
-    if(!album) return next();
-    res.render('album', { album })
-    
+    const album = await Album.findOne({
+        slug: req.params.slug
+    });
+    if (!album) return next();
+    res.render('album', {
+        album
+    })
+
 }
 
 exports.editAlbum = async (req, res) => {
