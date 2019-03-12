@@ -2,7 +2,7 @@
   "name": "sachalebas",
   "version": "0.0.0",
   "engine": {
-    "node": "10.15.1"
+    "node": "8.10.0"
   },
   "private": true,
   "scripts": {
