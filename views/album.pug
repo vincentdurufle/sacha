@@ -9,6 +9,6 @@ block content
         .photo-container-half
             .slider_container
                 each photo, index in album.slider
-                    img(src=`/uploads/${photo}` alt="" data-position=`${index+1}`).index
+                    img(src=`/uploads/${photo}` alt=`${album.tags || album.title}` data-position=`${index+1}`).index
                 span.counter
         

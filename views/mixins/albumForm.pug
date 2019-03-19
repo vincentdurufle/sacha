@@ -21,4 +21,6 @@ mixin albumForm(album = {})
                 each photo in album.slider
                     img(src=`/uploads/${photo}`, alt=album.title width=200)                
         br
+        label(for="tags") Tags
+            input(type='text', name='tags', placeholder='Enter some tags' value=album.tags)
         input(type='submit', value='ADD Album →').button

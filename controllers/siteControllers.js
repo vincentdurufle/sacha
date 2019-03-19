@@ -47,7 +47,8 @@ const albumSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    slider: Array
+    slider: Array,
+    tags: String
 });
 
 albumSchema.pre('save', function (next) {
@@ -95,25 +96,6 @@ exports.updateAlbum = async (req, res) => {
         new: true, // return the new store instead of the old one
         runValidators: true
     }).exec();
-    // const albumArray = await Album.aggregate([{
-    //     "$project": {
-    //         "_id": 0,
-    //         "slider": {
-    //             "$map": {
-    //                 "input": "$Album",
-    //                 "as": "ar",
-    //                 "in": "$$ar.slider"
-    //             }
-    //         }
-    //     }
-    // }])
-    // console.log(albumArray);
-    // await fs.readdir(uploadDir, (err, files) => {
-    //     for (file in files) {
-    //         console.log(file);
-    //     }
-    // })
-
     res.redirect(`/album/${album._id}/edit`);
 }
 
