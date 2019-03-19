@@ -1,0 +1,6 @@
+User-Agent: *
+Disallow: /users
+Disallow: /users/add
+Disallow: /users/edit
+
+Sitemap: http://www.sachalebas.com/sitemap.xml

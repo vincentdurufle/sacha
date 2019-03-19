@@ -10,6 +10,9 @@ var session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 require('./controllers/userController');
 const User = mongoose.model('User');
+const oneYear = 60 * 1000 * 60 * 24 * 365;
+const xssFilter = require('x-xss-protection');
+const noSniff = require('dont-sniff-mimetype');
 require('dotenv').config({ path:"process.env"});
 
 var indexRouter = require('./routes/index');
@@ -17,12 +20,12 @@ var indexRouter = require('./routes/index');
 
 
 var app = express();
-
+app.use(xssFilter());
+app.use(noSniff());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({

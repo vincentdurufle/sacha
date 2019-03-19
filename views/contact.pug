@@ -1,52 +1,44 @@
 doctype html
-head
-  // Global site tag (gtag.js) - Google Analytics
-  script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-132582219-1')
-  script.
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-    dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-132582219-1');
-  meta(charset='UTF-8')
-  meta(name='keywords' content='photographie, sacha lebas, paris, mail, argentique')
-  meta(name='description' content='SACHA LEBAS CONTACT · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
-  meta(name='author' content='Sacha Lebas')
-  meta(property='og:title' content='Sacha Lebas DIARY')
-  meta(property='og:site_name' content='Sacha Lebas')
-  meta(property='og:url' content='http://sachalebas.com')
-  meta(property='og:description' content='SACHA LEBAS PORTFOLIO · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
-  meta(property='og:type' content='website')
-  meta(property='og:image' content='http://sachalebas.com/ressources/img/bio.jpg')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
-  link(rel='stylesheet' href='/ressources/css/style.css')
-  link(rel='stylesheet' href='/ressources/css/queries.css')
-  link(rel='stylesheet' href='/ressources/css/stylesheet.css')
-  title SACHA LEBAS CONTACT
-.main
-  header
-    nav
-      ul.banner-container
-        li
-          a(href='/index')
-            h1 Sacha Lebas
-        li.line
-          a(href='/new_portfolio')  Photo
-        li.line
-          a(href='/video')  Video
-        li.line
-          a(href='https://www.instagram.com/sacha_lebas/' target='_blank')  Instagram
-        li.line
-          a(href='/about')  About
-        li.line
-          a(href='/contact')  Contact
-  section.contact-container
-    .contact
-      a.mail(href='mailto:lebas.sacha@gmail.com') lebas.sacha@gmail.com
-      p +33 (0)7 87 06 83 75
-  footer
-    p ALL CONTENTS &copy; 2019 SACHA LEBAS
+html(lang='fr')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='Content-Security-Policy' content="default-src 'none'; form-action 'self'; frame-ancestors 'none'; style-src 'self'; script-src 'self' *.cornify.com/ *.vimeo.com *.mlab.com; font-src 'self'; img-src 'self' *.cornify.com/;")
+    meta(name='keywords' content='photographie, sacha lebas, paris, mail, argentique')
+    meta(name='description' content='SACHA LEBAS CONTACT · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
+    meta(name='author' content='Sacha Lebas')
+    meta(property='og:title' content='Sacha Lebas DIARY')
+    meta(property='og:site_name' content='Sacha Lebas')
+    meta(property='og:url' content='http://sachalebas.com')
+    meta(property='og:description' content='SACHA LEBAS PORTFOLIO · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
+    meta(property='og:type' content='website')
+    meta(property='og:image' content='http://sachalebas.com/ressources/img/bio.jpg')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    link(rel='stylesheet' href='/ressources/css/style.css')
+    link(rel='stylesheet' href='/ressources/css/queries.css')
+    link(rel='stylesheet' href='/ressources/css/stylesheet.css')
+    title SACHA LEBAS CONTACT
+  .main
+    header
+      nav
+        ul.banner-container
+          li
+            a(href='/index')
+              h1 Sacha Lebas
+          li.line
+            a(href='/new_portfolio')  Photo
+          li.line
+            a(href='/video')  Video
+          li.line
+            a(href='https://www.instagram.com/sacha_lebas/' target='_blank')  Instagram
+          li.line
+            a(href='/about')  About
+          li.line
+            a(href='/contact')  Contact
+    section.contact-container
+      .contact
+        a.mail(href='mailto:lebas.sacha@gmail.com') lebas.sacha@gmail.com
+        p +33 (0)7 87 06 83 75
+  footer ALL CONTENTS &copy; 2019 SACHA LEBAS
+      
 script(src='/vendors/js/jquery-3.3.1.min.js')
-script(type='text/javascript' src='http://www.cornify.com/js/cornify.js')
 script(src='/ressources/js/script.js')

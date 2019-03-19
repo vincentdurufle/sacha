@@ -12,6 +12,7 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
+    "dont-sniff-mimetype": "^1.0.0",
     "dotenv": "^6.2.0",
     "express": "~4.16.0",
     "express-session": "^1.15.6",
@@ -28,6 +29,7 @@
     "pug": "2.0.0-beta11",
     "slug": "^1.0.0",
     "uuid": "^3.3.2",
-    "validator": "^10.11.0"
+    "validator": "^10.11.0",
+    "x-xss-protection": "^1.1.0"
   }
 }

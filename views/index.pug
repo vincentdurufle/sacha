@@ -1,16 +1,8 @@
 doctype html
-html
+html(lang='fr')
     head
-    // Global site tag (gtag.js) - Google Analytics
-    script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-132582219-1')
-    script.
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-        dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-132582219-1');
     meta(charset='UTF-8')
+    meta(http-equiv='Content-Security-Policy' content="default-src 'none'; form-action 'self'; frame-ancestors 'none'; style-src 'self'; script-src 'self' *.cornify.com/ *.vimeo.com *.mlab.com; font-src 'self'; img-src 'self' *.cornify.com/;")
     meta(name='keywords' content='photographie, sacha lebas, paris, argentique, art')
     meta(name='description' content='SACHA LEBAS PHOTOGRAPHIE · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
     meta(name='author' content='Sacha Lebas')
@@ -34,9 +26,9 @@ html
                             a(href='/index')
                                 h1 Sacha Lebas
                         li.line
-                            a(href='/new_portfolio')  Photo
+                            a(href='/new_portfolio') Photo
                         li.line
-                            a(href='/video')  Video
+                            a(href='/video') Video
                         li.line
                             a(href='https://www.instagram.com/sacha_lebas/' target='_blank')  Instagram
                         li.line
@@ -54,8 +46,7 @@ html
                     img.index(data-position='7' src='ressources/img/AlexRouge.jpg' alt='Spireat, Rouge, monochrome')
                     img.index(data-position='8' src='ressources/img/VincentRouge.jpg' alt='Spireat band groupe rock')
                 span.counter
-            footer
-                p ALL CONTENTS &copy; 2019 SACHA LEBAS
+        footer ALL CONTENTS &copy; 2019 SACHA LEBAS
+        
 script(src='/vendors/js/jquery-3.3.1.min.js')
-script(type='text/javascript' src='http://www.cornify.com/js/cornify.js')
 script(src='/ressources/js/script.js')

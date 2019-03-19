@@ -126,22 +126,6 @@
     }
 })();
 
-// konami code
-(function () {
-    let pressed = [];
-    const secret = "vincent";
-    document.addEventListener('keyup', function (e) {
-
-        pressed.push(e.key);
-        pressed.splice(-pressed.length - 1, pressed.length - secret.length);
-        if (pressed.join('') === secret) {
-            console.log('Jackpot !');
-            cornify_add();
-
-        }
-    })
-
-})();
 
 
 //prevents right click
