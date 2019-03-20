@@ -14,7 +14,7 @@ const oneYear = 60 * 1000 * 60 * 24 * 365;
 const xssFilter = require('x-xss-protection');
 const noSniff = require('dont-sniff-mimetype');
 require('dotenv').config({ path:"process.env"});
-
+const compression = require('compression');
 var indexRouter = require('./routes/index');
 
 
@@ -22,6 +22,7 @@ var indexRouter = require('./routes/index');
 var app = express();
 app.use(xssFilter());
 app.use(noSniff());
+app.use(compression());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -69,7 +70,6 @@ passport.use(new LocalStrategy(
 
 passport.serializeUser(function (user, done) {
   done(null, user._id);
-  console.log(user);
 });
 
 passport.deserializeUser(function (user, done) {

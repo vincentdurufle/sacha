@@ -96,10 +96,19 @@ html {
 
 .photo-container {
     padding: 50px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 50vh;
 }
 
@@ -266,12 +275,16 @@ footer {
 
 .portfolio2 {
     max-width: 25vw;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
 
 }
 
 .portfolio2:hover .album_title,
 .portfolio2:active .album_title {
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     opacity: 1;
 }
@@ -292,22 +305,35 @@ footer {
 }
 
 .slider_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 60vh;
 
 }
 
 .photo-container2 {
     margin-top: 8vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
 }
 
 
 .description {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     max-width: 20vw;
     /* padding: 0 20px; */
 
@@ -425,8 +451,13 @@ blockquote::after {
     padding: 20px;
     width: 50%;
     text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: rgba(24, 23, 22, 0.082);
 }
 
@@ -441,9 +472,14 @@ blockquote::after {
 /* =========================== */
 
 .video_flex_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     width: 100%;
 }
 
