@@ -52,7 +52,9 @@ html {
 .banner-container li a:visited {
     text-decoration: none;
     color: black;
+    
 }
+
 
 .line::after {
     content: '';
@@ -88,7 +90,12 @@ html {
     -webkit-box-flex: 2;
     -ms-flex: 2;
     flex: 2;
+    
 }
+.banner-container li h1 {
+    border-bottom: 2px solid black;
+}
+
 
 
 
