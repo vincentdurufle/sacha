@@ -26,7 +26,7 @@ app.use(compression());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
+app.use(express.static(__dirname + '/public', {maxAge: oneYear, dotfiles:'allow'}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
