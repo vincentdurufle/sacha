@@ -12,7 +12,7 @@ router.get('/about', siteControllers.about);
 router.get('/contact', siteControllers.contact);
 
 
-router.get('/new_portfolio', siteControllers.getAlbums);
+router.get('/photo', siteControllers.getAlbums);
 
 router.get('/users/add', 
   userController.isLoggedIn, 

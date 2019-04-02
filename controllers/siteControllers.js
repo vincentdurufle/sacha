@@ -144,7 +144,7 @@ exports.resize = async (req, res, next) => {
 
 //router.get
 exports.getAlbums = async (req, res) => {
-    const albums = await Album.find();
+    const albums = await Album.find().sort({_id:-1});
     res.render('albums', {
         albums
     });

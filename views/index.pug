@@ -1,22 +1,22 @@
 doctype html
 html(lang='fr')
     head
-    meta(charset='UTF-8')
-    meta(http-equiv='Content-Security-Policy' content="default-src 'none'; form-action 'self'; frame-ancestors 'none'; style-src 'self'; script-src 'self' *.cornify.com/ *.vimeo.com *.mlab.com; font-src 'self'; img-src 'self' *.cornify.com/;")
-    meta(name='keywords' content='photographie, sacha lebas, paris, argentique, art')
-    meta(name='description' content='SACHA LEBAS PHOTOGRAPHIE · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
-    meta(name='author' content='Sacha Lebas')
-    meta(property='og:title' content='Sacha Lebas DIARY')
-    meta(property='og:site_name' content='Sacha Lebas')
-    meta(property='og:url' content='https://sachalebas.com')
-    meta(property='og:description' content='SACHA LEBAS PORTFOLIO · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
-    meta(property='og:type' content='website')
-    meta(property='og:image' content='http://sachalebas.com/ressources/img/bio.jpg')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
-    link(rel='stylesheet' href='/ressources/css/style.css')
-    link(rel='stylesheet' href='/ressources/css/queries.css')
-    link(rel='stylesheet' href='/ressources/css/stylesheet.css')
-    title SACHA LEBAS DIARY
+        meta(charset='UTF-8')
+        meta(http-equiv='Content-Security-Policy' content="default-src 'none'; form-action 'self'; frame-ancestors 'none'; style-src 'self'; script-src 'self' *.google-analytics.com *.vimeo.com *.mlab.com; font-src 'self'; img-src data: 'self' *.google-analytics.com *.g.doubleclick.net;")
+        meta(name='keywords' content='photographie, sacha lebas, paris, argentique, art')
+        meta(name='description' content='SACHA LEBAS PHOTOGRAPHIE · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
+        meta(name='author' content='Sacha Lebas')
+        meta(property='og:title' content='Sacha Lebas DIARY')
+        meta(property='og:site_name' content='Sacha Lebas')
+        meta(property='og:url' content='https://sachalebas.com')
+        meta(property='og:description' content='SACHA LEBAS PORTFOLIO · Portfolio · Instagram · About · Contact © 2019 Sacha Lebas ')
+        meta(property='og:type' content='website')
+        meta(property='og:image' content='http://sachalebas.com/ressources/img/bio.jpg')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+        link(rel='stylesheet' href='/ressources/css/style.css')
+        link(rel='stylesheet' href='/ressources/css/queries.css')
+        link(rel='stylesheet' href='/ressources/css/stylesheet.css')
+        title SACHA LEBAS DIARY
     body.indexPage
         div.main
             header
@@ -27,7 +27,7 @@ html(lang='fr')
                                 h1.photographer Sacha Lebas
                                 p Photographer
                         li.line
-                            a(href='/new_portfolio') Photo
+                            a(href='/photo') Photo
                         li.line
                             a(href='/video') Video
                         li.line
@@ -51,3 +51,5 @@ html(lang='fr')
         
 script(src='/vendors/js/jquery-3.3.1.min.js')
 script(src='/ressources/js/script.js')
+script(src="https://ssl.google-analytics.com/analytics.js" async id="ga")
+script(src="/ressources/js/ga.js" async)
