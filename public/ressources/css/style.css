@@ -283,11 +283,7 @@ footer {
 }
 
 .portfolio2 {
-    max-width: 25vw;
-    -webkit-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s;
-
+    flex: 1 1 25%;
 }
 
 .portfolio2:hover .album_title,
