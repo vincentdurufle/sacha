@@ -15,7 +15,7 @@
 
 }
 (function () {
-    if (document.body.className === 'indexPage') {
+    if (document.body.className === 'indexPage' && document.URL != ('http://sachalebas.com/photo' || 'https://sachalebas.com/photo')) {
         document.querySelector('[data-position="1"]').classList.add('is_selected');
         let rightCounter = document.querySelector('.is_selected');
         const leftCounter = document.querySelectorAll('[data-position]').length;
