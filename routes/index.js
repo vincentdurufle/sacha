@@ -5,6 +5,7 @@ const userController = require('../controllers/userController');
 
 
 
+
 /* GET home page. */
 router.get('/', siteControllers.homePage);
 router.get('/index', siteControllers.homePage);
@@ -12,26 +13,26 @@ router.get('/about', siteControllers.about);
 router.get('/contact', siteControllers.contact);
 
 
-router.get('/photo', siteControllers.getAlbums);
+router.get('/photo', siteControllers.catchErrors(siteControllers.getAlbums));
 
 router.get('/users/add', 
   userController.isLoggedIn, 
   siteControllers.addAlbum);
 router.post('/users/add',
   siteControllers.upload,
-  siteControllers.resize,
-  siteControllers.createAlbum
+  siteControllers.catchErrors(siteControllers.resize),
+  siteControllers.catchErrors(siteControllers.createAlbum)
 );
 
-router.get('/users/edit', siteControllers.editingAlbumPage);
+router.get('/users/edit', siteControllers.catchErrors(siteControllers.editingAlbumPage));
 
 router.post('/users/add/:id',
   siteControllers.upload,
-  siteControllers.resize, 
-  siteControllers.updateAlbum);
-router.get('/album/:id/edit', siteControllers.editAlbum);
+  siteControllers.catchErrors(siteControllers.resize), 
+  siteControllers.catchErrors(siteControllers.updateAlbum));
+router.get('/album/:id/edit', siteControllers.catchErrors(siteControllers.editAlbum));
 
-router.get('/album/:slug', siteControllers.getAlbumBySlug);
+router.get('/album/:slug', siteControllers.catchErrors(siteControllers.getAlbumBySlug));
 
 router.get('/users', userController.loginForm);
 router.post('/users', userController.login);

@@ -9,6 +9,12 @@ require('dotenv').config({
     path: 'process.env'
 });
 
+exports.catchErrors = (fn) => {
+    return function(req, res, next) {
+      return fn(req, res, next).catch(next);
+    };
+  };
+
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
