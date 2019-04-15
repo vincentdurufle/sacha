@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://sachalebas.com/</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/index</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/photo</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/video</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/about</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/contact</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/album/Cookie-Kunty-Drag-Me-Up</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/album/SPIREAT-CLIP</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/album/SPIREAT-LIVE-GAMBETTA-CLUB</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/album/NEW-YORK</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/album/SOUTH-KOREA</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sachalebas.com/album/RED-LOBSTER</loc>
+  <lastmod>2019-04-15T12:53:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
