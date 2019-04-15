@@ -28,7 +28,6 @@ router.get('/users/edit', siteControllers.catchErrors(siteControllers.editingAlb
 
 router.post('/users/add/:id',
   siteControllers.upload,
-  siteControllers.catchErrors(siteControllers.resize), 
   siteControllers.catchErrors(siteControllers.updateAlbum));
 router.get('/album/:id/edit', siteControllers.catchErrors(siteControllers.editAlbum));
 

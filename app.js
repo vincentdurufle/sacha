@@ -10,7 +10,7 @@ var session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 require('./controllers/userController');
 const User = mongoose.model('User');
-const oneYear = 60 * 1000 * 60 * 24 * 365;
+const oneYear = 60 * 1000 * 60 * 24 * 7;
 const xssFilter = require('x-xss-protection');
 const noSniff = require('dont-sniff-mimetype');
 require('dotenv').config({ path:"process.env"});

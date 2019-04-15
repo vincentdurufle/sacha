@@ -10,10 +10,10 @@ require('dotenv').config({
 });
 
 exports.catchErrors = (fn) => {
-    return function(req, res, next) {
-      return fn(req, res, next).catch(next);
+    return function (req, res, next) {
+        return fn(req, res, next).catch(next);
     };
-  };
+};
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, {
@@ -118,6 +118,7 @@ exports.resize = async (req, res, next) => {
     }
 
     // for photoCover
+    
     for (i in req.files['photoCover']) {
         const extension = req.files['photoCover'][i].mimetype.split('/')[1];
         req.body.photoCover = `${uuid.v4()}.${extension}`;
@@ -129,13 +130,13 @@ exports.resize = async (req, res, next) => {
 
 
     //for slider
-
+    
     req.body.slider = [];
     for (i in req.files['slider']) {
         let extensions = req.files['slider'][i].mimetype.split('/')[1];
         let extensionPath = `${uuid.v4()}.${extensions}`;
         req.body.slider.push(extensionPath);
-
+        
         //resize
 
         let slider = await jimp.read(req.files['slider'][i].buffer);
@@ -144,13 +145,17 @@ exports.resize = async (req, res, next) => {
 
     }
 
+
+
     next();
 
 }
 
 //router.get
 exports.getAlbums = async (req, res) => {
-    const albums = await Album.find().sort({_id:-1});
+    const albums = await Album.find().sort({
+        _id: -1
+    });
     res.render('albums', {
         albums
     });
