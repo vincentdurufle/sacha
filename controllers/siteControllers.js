@@ -105,6 +105,7 @@ exports.updateAlbum = async (req, res) => {
     res.redirect(`/album/${album._id}/edit`);
 }
 
+
 exports.upload = multer(multerOptions).fields([{
     name: 'photoCover'
 }, {
@@ -130,7 +131,7 @@ exports.resize = async (req, res, next) => {
 
 
     //for slider
-    
+
     req.body.slider = [];
     for (i in req.files['slider']) {
         let extensions = req.files['slider'][i].mimetype.split('/')[1];
@@ -180,3 +181,5 @@ exports.editAlbum = async (req, res) => {
         album
     });
 }
+
+

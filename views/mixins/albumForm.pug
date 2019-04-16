@@ -24,4 +24,7 @@ mixin albumForm(album = {})
         label(for="tags") Tags
             input(type='text', name='tags', placeholder='Enter some tags' value=album.tags)
         input(type='submit', value='ADD Album →').button
+        br
+        .portfolio2
+            a(href="/users/edit") Click here to edit albums
 

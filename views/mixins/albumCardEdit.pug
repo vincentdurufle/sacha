@@ -1,7 +1,8 @@
 mixin albumCardEdit(album = {})
     .portfolio2
-        a(href=`/album/${album._id}/edit`) ○
+        a(href=`/album/${album._id}/edit`) ○ Edit
         a(href=`/album/${album.slug}`)
             img(src=`/uploads/${album.photoCover || 'PhotoBio.jpg'}` alt=album.title).thumbnails2
+        //- a(href=`/users/edit/${album._id}`) x Delete
         p.album_title= album.title
 

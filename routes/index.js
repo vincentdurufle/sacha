@@ -31,6 +31,7 @@ router.post('/users/add/:id',
   siteControllers.catchErrors(siteControllers.updateAlbum));
 router.get('/album/:id/edit', siteControllers.catchErrors(siteControllers.editAlbum));
 
+router.post('/users/edit/:id', siteControllers.catchErrors(siteControllers.deleteAlbum));
 router.get('/album/:slug', siteControllers.catchErrors(siteControllers.getAlbumBySlug));
 
 router.get('/users', userController.loginForm);
